@@ -1,0 +1,125 @@
+/* I define here the popup boxes for the website */
+.popup-overlay-over {
+
+    background: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.popup-box-over {
+
+    font-size: 25px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    width: 30%;
+    height: 20%;    
+    min-width: 300px;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.close-button {
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.popup-overlay-under {
+
+    background: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.popup-box-under {
+
+    font-size: 25px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    width: 40%;
+    height: 25%;    
+    display: block; /* Disable flexbox for general content positioning */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.popup-box-under h2 {
+
+    font-weight: 700;
+    margin-top: 30px;
+    padding-top: 0;
+    margin-bottom: 10px; 
+}
+
+.popup-box-under h6 {
+
+    font-weight: 100;
+    margin-top: 40px;
+    padding-top: 0;
+    margin-bottom: 10px; 
+}
+
+.rectangle-button-container {
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* This is where inputs are where it asks for collection name */
+.rectangle-outline {
+    font-size: 20px;
+    padding-left: 15px;
+    margin-top: 35px;
+    margin-left: 0px;
+    width: 55%; 
+    height: 55px; 
+    border: 2px solid lightgray; 
+    background-color: transparent; 
+    border-radius: 0px; 
+    flex: 1;
+
+}
+
+.popup-box-under-button {
+
+    margin-top: 35px;
+    height: 55px;
+    width: 20%;
+    background-color: black;
+    color: white;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
