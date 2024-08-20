@@ -89,7 +89,10 @@ html, body, #root {
   margin-bottom: 20px;
   color: white;
   border: 3px solid white;
-  line-height: 75px;
+  line-height: 90px;
+  font-size: 40px;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 .grid-container {
