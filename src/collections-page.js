@@ -62,7 +62,7 @@ function CollectionsPage() {
     return (
         <>
         <div className="collections-page">
-            <SideBar selectedItem={selectedItem}/>
+            <SideBar selectedItem={selectedItem} setSelectedItem={setSelectedItem} items={items} setItems={setItems}/>
             {showPopUp && 
             <CollectionsPagePopup
                 handleClose={handleClose} 
@@ -110,7 +110,7 @@ function ItemGrid({ items, handleDetailsClick }) {
                 {items.map(item => (
                     <div className="item-card" key={item.id}>
                         <h3 className="item-title">{item.title}</h3>
-                        <button className="action-button" onClick={handleDetailsClick}>View Details</button>
+                        <button className="action-button" onClick={() => handleDetailsClick(item)}>View Details</button>
                     </div>
                 ))}
             </section>
@@ -143,27 +143,62 @@ function CollectionsPagePopup({ handleClose, handleAction, inputValue, setInputV
     )
 }
 
-function SideBar({ selectedItem }) {
+function SideBar({ selectedItem, setSelectedItem, items, setItems }) {
+
+    const [description, setDescription] = useState(selectedItem ? selectedItem.description || '' : '');
+    const handleSubmitSidebar = () => {
+        const updatedItem = {
+            ...selectedItem,
+            description: description,
+            done: "yes",
+        };
+        setSelectedItem(updatedItem);
+
+
+    const index = items.findIndex(item => item.id == updatedItem.id);
+
+    if (index != -1) {
+
+        const updatedItems = [...items];
+        updatedItems[index] = updatedItem;
+        setItems(updatedItems);
+        setSelectedItem(updatedItem);
+    }
+    };
+
 
     return (
-        <>
         <div id="mySidebar" className="sidebar">
             <button className="close-button" onClick={() => document.getElementById("mySidebar").classList.remove("active")}>×</button>
             <div className="sidebar-content">
                 {selectedItem && (
                     <>
                         <h2>{selectedItem.title}</h2>
-                        <input type="file" id="imageUpload" className="image-upload" />
 
-                        <h3>Description</h3>
-                        <textarea id="description" className="description-area" placeholder="Enter description..."></textarea>
+                        {/* Conditionally render textarea or submitted text */}
+                        {selectedItem.done === "yes" ? (
+                            <p>{selectedItem.description}</p>  // Display the submitted text
+                        ) : (
+                            <>
+                                <h3>Description</h3>
+                                <textarea
+                                    id="description"
+                                    className="description-area"
+                                    placeholder="Enter description..."
+                                    value={description}
+                                    onChange={(e) => setDescription(e.target.value)}
+                                ></textarea>
+                            </>
+                        )}
 
-                        <button className="submit-button">Submit</button>
+                        {/* Show submit button only if the description is not submitted */}
+                        {selectedItem.done !== "yes" && (
+                            <button className="submit-button" onClick={handleSubmitSidebar}>Submit</button>
+                        )}
                     </>
                 )}
             </div>
         </div>
-        </>
-    )
+    );
 }
 export default CollectionsPage;
