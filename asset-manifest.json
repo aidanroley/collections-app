@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/collections-app/static/css/main.94082efc.chunk.css",
-    "main.js": "/collections-app/static/js/main.90129b74.chunk.js",
-    "main.js.map": "/collections-app/static/js/main.90129b74.chunk.js.map",
+    "main.js": "/collections-app/static/js/main.8a55af71.chunk.js",
+    "main.js.map": "/collections-app/static/js/main.8a55af71.chunk.js.map",
     "runtime-main.js": "/collections-app/static/js/runtime-main.f165b60d.js",
     "runtime-main.js.map": "/collections-app/static/js/runtime-main.f165b60d.js.map",
     "static/js/2.e2f08934.chunk.js": "/collections-app/static/js/2.e2f08934.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.7b03150e.chunk.js": "/collections-app/static/js/3.7b03150e.chunk.js",
     "static/js/3.7b03150e.chunk.js.map": "/collections-app/static/js/3.7b03150e.chunk.js.map",
     "index.html": "/collections-app/index.html",
-    "precache-manifest.7aebbfb5e706bd5a7e3162698bcaa15a.js": "/collections-app/precache-manifest.7aebbfb5e706bd5a7e3162698bcaa15a.js",
+    "precache-manifest.e645fa292fcfee144d464c91305d915b.js": "/collections-app/precache-manifest.e645fa292fcfee144d464c91305d915b.js",
     "service-worker.js": "/collections-app/service-worker.js",
     "static/css/main.94082efc.chunk.css.map": "/collections-app/static/css/main.94082efc.chunk.css.map",
     "static/js/2.e2f08934.chunk.js.LICENSE.txt": "/collections-app/static/js/2.e2f08934.chunk.js.LICENSE.txt"
@@ -19,6 +19,6 @@
     "static/js/runtime-main.f165b60d.js",
     "static/js/2.e2f08934.chunk.js",
     "static/css/main.94082efc.chunk.css",
-    "static/js/main.90129b74.chunk.js"
+    "static/js/main.8a55af71.chunk.js"
   ]
 }
