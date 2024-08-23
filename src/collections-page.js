@@ -23,7 +23,6 @@ function CollectionsPage() {
     // Logic for knowing when to show the pop-up and the input for the pop-up
     const [showPopUp, setShowPopUp] = useState(false);
     const [inputValue, setInputValue] = useState('');
-    const [sidebarInput, setSidebarInput] = useState('');
 
     const handleClose = () => {
 
@@ -34,12 +33,6 @@ function CollectionsPage() {
     const handleAction = () => {
 
         const newItem = {
-
-            id: items.length + 1,
-            title: `${inputValue}`,
-        };
-
-        const newSidebarItem = {
 
             id: items.length + 1,
             title: `${inputValue}`,

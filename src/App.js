@@ -2,7 +2,7 @@ import './App.css';
 import './popup.css';
 import CollectionsPage from './collections-page';
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 // This function is for the button you click to add a collection
@@ -151,13 +151,6 @@ function App() {
   }
 
   // Here is the code that decides whether or not the collections page should show up
-
-  const [CollectionsPageElement, setCollectionsPage] = useState(false);
-
-  const closeCollectionsPage = () => {
-
-    setCollectionsPage(false);
-  }
 
   return (
     <Router>
