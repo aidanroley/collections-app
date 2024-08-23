@@ -146,7 +146,10 @@ function CollectionsPagePopup({ handleClose, handleAction, inputValue, setInputV
 function SideBar({ selectedItem, setSelectedItem, items, setItems }) {
 
     const [description, setDescription] = useState(selectedItem ? selectedItem.description || '' : '');
+    const [imageLink, setImageLink] = useState(selectedItem ? selectedItem.imageLink || '' : '');
+
     const handleSubmitSidebar = () => {
+
         const updatedItem = {
             ...selectedItem,
             description: description,
@@ -154,7 +157,7 @@ function SideBar({ selectedItem, setSelectedItem, items, setItems }) {
         };
         setSelectedItem(updatedItem);
 
-
+    // When a description is submitted, these next few lines update that outside just this function scope
     const index = items.findIndex(item => item.id == updatedItem.id);
 
     if (index != -1) {
@@ -166,13 +169,52 @@ function SideBar({ selectedItem, setSelectedItem, items, setItems }) {
     }
     };
 
+    const handleSubmitImage = () => {
+
+        const updatedItemImage = {
+            ...selectedItem,
+            imageLink: imageLink,
+            doneImage: "yes",
+        };
+        setSelectedItem(updatedItemImage);
+
+    // When a description is submitted, these next few lines update that outside just this function scope
+    const index = items.findIndex(item => item.id == updatedItemImage.id);    
+      
+    if (index != -1) {
+    
+        const updatedItems = [...items];
+        updatedItems[index] = updatedItemImage;
+        setItems(updatedItems);
+        setSelectedItem(updatedItemImage);
+    }
+    };
+
 
     return (
         <div id="mySidebar" className="sidebar">
             <button className="close-button" onClick={() => document.getElementById("mySidebar").classList.remove("active")}>×</button>
             <div className="sidebar-content">
                 {selectedItem && (
-                    <>
+                    <>  
+                        {/* Conditionally render image text area */}
+                        {selectedItem.doneImage == "yes" ? (
+                            <img src={selectedItem.imageLink} alt={"User-provided"} className="uploaded-image" />
+                        ) : (
+                            <>
+                                <h3>Image</h3>
+                                <textarea
+                                    className="description-area"
+                                    placeholder="Enter an image link"
+                                    value={imageLink}
+                                    onChange={(e) => setImageLink(e.target.value)}
+                                ></textarea>
+                            </>
+                        )}
+
+                        {selectedItem.doneImage !== "yes" && (
+                            <button className="submit-button" onClick={handleSubmitImage}>Submit</button>
+                        )}
                         <h2>{selectedItem.title}</h2>
 
                         {/* Conditionally render textarea or submitted text */}

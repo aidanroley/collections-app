@@ -1,12 +1,10 @@
 html, body, #root {
-
   height: 100%;
   margin: 0;
 }
 
 .App {
-
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Helvetica Neue', sans-serif; /* Changed to match the collections-page font */
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -15,9 +13,8 @@ html, body, #root {
 
 /* The top fixed section at the top of the screen */
 .top-section {
-
   flex-grow: 0;
-  background-color: #222222;
+  background-color: #f5f5f5; /* Changed background color to match collections-page */
   height: 100px;
   display: flex;
   align-items: center;
@@ -29,37 +26,37 @@ html, body, #root {
 
 /* Text at the top */
 .top-section h1 {
-
   font-weight: 600;
   margin: 0;
-  color: #ffffff
+  color: #333; /* Changed text color to match collections-page title */
+  font-family: 'Playfair Display', serif; /* Changed to match collections-page title font */
+  font-size: 2.5rem; /* Adjusted font size to match title in collections-page */
 }
 
 /* This is the outline right below the top section */
 .top-section::after {
-
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #fff;
+  background-color: #ccc; /* Changed to a softer color to match the collections-page theme */
 }
 
 /* Everything below the top section is represented by this */
 .bottom-section {
-
-  background-color: #555555;
+  background-color: #f5f5f5; /* Changed to match the collections-page background */
   flex-grow: 1;
   width: 100%;
+  padding: 20px; /* Added padding for consistency with collections-page */
 }
 
 /* Button at the top right used to add collections */
 .add-new-collection-button {
   width: 200px;
   height: 50px;
-  background-color: #222222;
+  background-color: #28a745; /* Changed background color to match add-item-button */
   border-radius: 8px;
   margin-top: 130px;              
   margin-left: auto;         
@@ -69,37 +66,46 @@ html, body, #root {
   font-size: 16px;
   font-weight: 500;
   line-height: 40px;
-  border: 2px solid white;
+  border: none; /* Removed border to match add-item-button style */
   display: block;        
   cursor: pointer;
   position: relative;    
   z-index: 2;
 }
 
-/* This is the button at represents a collection */
-.rounded-rectangle {
+.add-new-collection-button:hover {
+  background-color: #218838; /* Added hover effect to match add-item-button */
+}
 
+/* This is the button that represents a collection */
+.rounded-rectangle {
   width: 500px;
   height: 100px;
-  background-color: #222222;
-  border-radius: 20px;
+  background-color: #fff; /* Changed background color to white to match item-card */
+  border-radius: 15px; /* Adjusted border-radius to match item-card */
   padding: 25px;
   margin-left: 25px;
   margin-right: 25px;
   margin-bottom: 20px;
-  color: white;
-  border: 3px solid white;
+  color: #333; /* Changed text color to dark grey to match collections-page */
+  border: 3px solid #f5f5f5; /* Adjusted border color to match item-card */
   line-height: 90px;
-  font-size: 40px;
+  font-size: 1.5rem; /* Adjusted font size to be more consistent with collections-page */
   font-weight: 700;
   cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow to match item-card */
+  transition: transform 0.3s ease; /* Added transition to match item-card */
 }
 
-.grid-container {
+.rounded-rectangle:hover {
+  transform: translateY(-5px); /* Added hover effect to match item-card */
+}
 
+/* Grid container adjustments */
+.grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(6, 1fr);
-  gap: 10px;
-  margin: 0;
+  gap: 20px; /* Adjusted gap to match item-grid */
+  margin: 20px; /* Added margin for consistency with collections-page */
 }

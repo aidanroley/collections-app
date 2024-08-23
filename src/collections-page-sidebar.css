@@ -47,7 +47,7 @@
 
 .sidebar-content h2,
 .sidebar-content h3 {
-    margin-top: 200px;
+    margin-top: 20px;
     color: #333;
 }
 
@@ -82,4 +82,11 @@
 
 .submit-button:hover {
     background-color: #218838;
+}
+
+.uploaded-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 40px;
+    border-radius: 5px;
 }
